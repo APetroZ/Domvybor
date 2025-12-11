@@ -1,118 +1,135 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ДомВыбор — Подбор строительных компаний в Краснодаре</title>
-  <meta name="description" content="Подбор подрядчиков по строительству домов и ремонту в Краснодаре." />
-  <style>
-    :root { --accent: #0a74ff; --bg: #f5f6fa; --card: #ffffff; --text: #1a1a1a; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.4; }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ДомВыбор • Подбор строительных компаний в Краснодаре</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #222;
+        }
 
-    /* HEADER */
-    header { background: #fff; padding: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.05); position: sticky; top:0; z-index:10; }
-    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 16px; }
-    .row { display: flex; justify-content: space-between; align-items: center; }
-    .brand { font-size: 20px; font-weight: bold; }
+        header {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-    /* HERO */
-    .hero { background: url('https://images.unsplash.com/photo-1582407947304-6f1a1b5f23a4?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat; padding: 70px 0; color: white; }
-    .hero .overlay { background: rgba(0,0,0,0.55); padding: 40px; border-radius: 12px; max-width: 550px; }
-    .hero h1 { font-size: 34px; margin-bottom: 10px; }
-    .tag { background: rgba(255,255,255,0.25); padding: 6px 14px; border-radius: 50px; font-weight: bold; display: inline-block; margin-bottom: 12px; }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    /* LAYOUT */
-    .grid2 { display: grid; grid-template-columns: 1fr 380px; gap: 28px; margin-top: 30px; }
-    @media(max-width: 900px){ .grid2 { grid-template-columns: 1fr; } }
+        .hero {
+            background: #4a6cf7;
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+        }
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+            line-height: 1.3;
+        }
+        .hero p {
+            margin: 0;
+            opacity: 0.9;
+        }
 
-    /* CARDS */
-    .card { background: var(--card); border-radius: 12px; padding: 22px; box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+        h2 {
+            margin-top: 40px;
+            font-size: 22px;
+        }
 
-    /* GALLERY */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; }
-    .gallery img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
+        .steps li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
 
-    /* FORM */
-    input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 12px; }
-    button { width: 100%; padding: 12px; background: var(--accent); border: none; color: #fff; border-radius: 8px; font-size: 17px; cursor: pointer; font-weight: bold; }
+        .example-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
 
-    footer { text-align: center; padding: 35px 0; font-size: 14px; color: #555; margin-top: 40px; }
-  </style>
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #4a6cf7;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 17px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <div class="container row">
-    <div class="brand">ДомВыбор • Краснодар</div>
-    <div>☎ Телефон будет позже</div>
-  </div>
+    ДомВыбор • Краснодар
 </header>
 
-<section class="hero">
-  <div class="container">
-    <div class="overlay">
-      <span class="tag">Подбор строительной компании</span>
-      <h1>Подберём подрядчика под вашу задачу в Краснодаре</h1>
-      <p>Вы оставляете заявку — мы подбираем компании. Выбираете лучшее предложение.</p>
-    </div>
-  </div>
-</section>
+<div class="container">
 
-<main class="container">
-  <div class="grid2">
-
-    <div>
-      <div class="card">
-        <h2>Как работает сервис</h2>
-        <ol style="margin-top:12px;">
-          <li>Вы отправляете заявку</li>
-          <li>Мы подбираем проверенных подрядчиков</li>
-          <li>Компании делают предложения</li>
-          <li>Выбираете выгодное</li>
-        </ol>
-      </div>
-
-      <div class="card" style="margin-top:20px;">
-        <h2>Примеры работ</h2>
-        <div id="gallery" class="gallery"></div>
-      </div>
+    <div class="hero">
+        <h1>Подберём строительную компанию под вашу задачу в Краснодаре</h1>
+        <p>Вы оставляете заявку — мы подбираем проверенных подрядчиков. Выбираете лучшее предложение.</p>
     </div>
 
-    <aside class="card">
-      <h3>Оставить заявку</h3>
-      <form id="leadForm">
-        <input type="text" id="name" placeholder="Ваше имя" required />
-        <input type="tel" id="phone" placeholder="Телефон" required />
-        <select id="service">
-          <option>Строительство дома</option>
-          <option>Ремонт квартиры</option>
-          <option>Отделка</option>
-          <option>Проектирование</option>
+    <h2>Как работает сервис</h2>
+    <ol class="steps">
+        <li>Вы отправляете заявку</li>
+        <li>Мы подбираем проверенных подрядчиков</li>
+        <li>Компании делают предложения</li>
+        <li>Выбираете выгодное</li>
+    </ol>
+
+    <h2>Примеры работ</h2>
+
+    <img class="example-img" src="https://i.ibb.co/2g7GkJH/build1.jpg" alt="">
+    <img class="example-img" src="https://i.ibb.co/2SdS2qk/build2.jpg" alt="">
+    <img class="example-img" src="https://i.ibb.co/CM2Cpz0/build3.jpg" alt="">
+
+    <h2>Оставить заявку</h2>
+
+    <form action="#" onsubmit="alert('Заявка отправлена!'); return false;">
+        <input type="text" placeholder="Ваше имя" required>
+        <input type="text" placeholder="Телефон" required>
+        <select>
+            <option>Строительство дома</option>
+            <option>Ремонт</option>
+            <option>Отделка</option>
         </select>
-        <input type="text" id="city" value="Краснодар" />
-        <textarea id="details" placeholder="Опишите задачу"></textarea>
+        <textarea rows="4" placeholder="Опишите задачу"></textarea>
         <button>Отправить заявку</button>
-      </form>
-    </aside>
+    </form>
 
-  </div>
-</main>
-
-<footer>
-  © 2025 ДомВыбор — подбор подрядчиков в Краснодаре
-</footer>
-
-<script>
-  const galleryImgs = [
-    "https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd99?w=1200&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1200&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80&auto=format&fit=crop"
-  ];
-  const g = document.getElementById("gallery");
-  galleryImgs.forEach(src => { const i=document.createElement("img"); i.src=src; g.appendChild(i); });
-</script>
+</div>
 
 </body>
 </html>
