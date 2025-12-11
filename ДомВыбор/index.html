@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ДомВыбор — Подбор строительных компаний в Краснодаре</title>
+  <meta name="description" content="Подбор подрядчиков по строительству домов и ремонту в Краснодаре." />
+  <style>
+    :root { --accent: #0a74ff; --bg: #f5f6fa; --card: #ffffff; --text: #1a1a1a; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.4; }
+
+    /* HEADER */
+    header { background: #fff; padding: 15px 0; box-shadow: 0 2px 6px rgba(0,0,0,0.05); position: sticky; top:0; z-index:10; }
+    .container { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+    .row { display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-size: 20px; font-weight: bold; }
+
+    /* HERO */
+    .hero { background: url('https://images.unsplash.com/photo-1582407947304-6f1a1b5f23a4?w=1600&q=80&auto=format&fit=crop') center/cover no-repeat; padding: 70px 0; color: white; }
+    .hero .overlay { background: rgba(0,0,0,0.55); padding: 40px; border-radius: 12px; max-width: 550px; }
+    .hero h1 { font-size: 34px; margin-bottom: 10px; }
+    .tag { background: rgba(255,255,255,0.25); padding: 6px 14px; border-radius: 50px; font-weight: bold; display: inline-block; margin-bottom: 12px; }
+
+    /* LAYOUT */
+    .grid2 { display: grid; grid-template-columns: 1fr 380px; gap: 28px; margin-top: 30px; }
+    @media(max-width: 900px){ .grid2 { grid-template-columns: 1fr; } }
+
+    /* CARDS */
+    .card { background: var(--card); border-radius: 12px; padding: 22px; box-shadow: 0 4px 12px rgba(0,0,0,0.07); }
+
+    /* GALLERY */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; }
+    .gallery img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
+
+    /* FORM */
+    input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 12px; }
+    button { width: 100%; padding: 12px; background: var(--accent); border: none; color: #fff; border-radius: 8px; font-size: 17px; cursor: pointer; font-weight: bold; }
+
+    footer { text-align: center; padding: 35px 0; font-size: 14px; color: #555; margin-top: 40px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container row">
+    <div class="brand">ДомВыбор • Краснодар</div>
+    <div>☎ Телефон будет позже</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="overlay">
+      <span class="tag">Подбор строительной компании</span>
+      <h1>Подберём подрядчика под вашу задачу в Краснодаре</h1>
+      <p>Вы оставляете заявку — мы подбираем компании. Выбираете лучшее предложение.</p>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="grid2">
+
+    <div>
+      <div class="card">
+        <h2>Как работает сервис</h2>
+        <ol style="margin-top:12px;">
+          <li>Вы отправляете заявку</li>
+          <li>Мы подбираем проверенных подрядчиков</li>
+          <li>Компании делают предложения</li>
+          <li>Выбираете выгодное</li>
+        </ol>
+      </div>
+
+      <div class="card" style="margin-top:20px;">
+        <h2>Примеры работ</h2>
+        <div id="gallery" class="gallery"></div>
+      </div>
+    </div>
+
+    <aside class="card">
+      <h3>Оставить заявку</h3>
+      <form id="leadForm">
+        <input type="text" id="name" placeholder="Ваше имя" required />
+        <input type="tel" id="phone" placeholder="Телефон" required />
+        <select id="service">
+          <option>Строительство дома</option>
+          <option>Ремонт квартиры</option>
+          <option>Отделка</option>
+          <option>Проектирование</option>
+        </select>
+        <input type="text" id="city" value="Краснодар" />
+        <textarea id="details" placeholder="Опишите задачу"></textarea>
+        <button>Отправить заявку</button>
+      </form>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 ДомВыбор — подбор подрядчиков в Краснодаре
+</footer>
+
+<script>
+  const galleryImgs = [
+    "https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd99?w=1200&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1502005097973-6a7082348e28?w=1200&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&q=80&auto=format&fit=crop"
+  ];
+  const g = document.getElementById("gallery");
+  galleryImgs.forEach(src => { const i=document.createElement("img"); i.src=src; g.appendChild(i); });
+</script>
+
+</body>
+</html>
